@@ -1,0 +1,93 @@
+nav{
+     background-color: var(--white);
+     color: var(--black);
+     padding: 0px 5vw;
+     transition: 1s;
+     height: 6rem;
+     width: 100vw;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     align-items: center;
+     position: sticky;
+     overflow-x: hidden;
+     top: 0;
+     left: 0;
+     z-index: 5;
+}
+nav.active{
+     background-color: var(--red);
+     color: var(--white);
+}
+.buttons{
+     display: flex;
+     flex-direction: row;
+     grid-gap: 10px;
+}
+nav button{
+     font-size: clamp(calc(10px + 1vmax), 1vmax,1vmax);
+}
+.hamburger-menu{
+     font-size: 3rem;
+}
+.logo{
+     font-size: clamp(20px, calc(2vmax - 1vmin + 1rem), calc(2vmax - 1vmin + 1rem));
+}
+.cellphone-logo{
+     display: none;
+     font-size: 3rem;
+     color: var(--red);
+}
+.cellphone-logo.white-logo{
+     color: var(--white);
+}
+nav .hamburger{
+     position: relative;
+     z-index: 7;
+     background-color: transparent;
+     padding: 5px;
+     height: 80px;
+     display: none;
+     cursor: pointer;
+  transition: all .5s ease-in-out;
+  justify-content: center;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+}
+nav .hamburger span{
+     position: relative;
+     border-radius: 5px;
+     width: 55px;
+     transition: 500ms;
+     height: 6px;
+     background-color: var(--black);
+}
+nav.active .hamburger span{
+     background-color: var(--white);
+}
+.open-nav .hamburger-1{
+     transform: rotate(45deg);
+     top: 16px;
+}
+.open-nav .hamburger-2{
+     width: 0;
+}
+.open-nav .hamburger-3{
+     transform: rotate(-45deg);
+     bottom: 16px;
+}
+.btn-toggle-nav{
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+}
+.btn-toggle-nav button{
+     width: 100%;
+     font-size: calc(2vmax + 10px);
+}
+@media screen and (max-width: 850px) {
+     .cellphone-logo{display: block;}
+     .buttons{display: none;}
+     nav .hamburger{display: flex;}
+}
