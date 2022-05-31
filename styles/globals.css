@@ -8,6 +8,10 @@
 .page{
   padding: calc(40px + 3rem) 5vw 2rem 5vw;
 }
+.rota180grados{
+  position: relative;
+  transform: rotate(180deg);
+}
 ::-webkit-scrollbar{
   width: 1rem;
 }
@@ -60,9 +64,10 @@ a{
   background-color: var(--platinum);
   box-shadow: 0 0 20px var(--black);
   border-radius: 10px;
-  transition: 1s;
+  transition: .5s;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 .destinations h4{
   position: relative;
@@ -72,7 +77,9 @@ a{
   padding: 10px 0;
 }
 .destinations article:hover{
-  box-shadow: 0 0 20px 5px var(--red);
+  background: var(--red);
+  color: var(--white);
+  transform: translateY(-10px);
 }
 .flex-wrap{
   display: flex;
@@ -86,13 +93,12 @@ a{
   width: 100%;
   height: 300px;
 }
-
 .grid-3{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 1rem 5%;
   margin-bottom: 2rem;
 }
 .grid-3 article{
@@ -101,8 +107,9 @@ a{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: var(--white);
   padding: 1rem 5%;
-  border: 4px solid var(--red);
+  box-shadow: 0 0 10px var(--black);
   border-radius: 10px;
   text-align: center;
 }
@@ -117,6 +124,7 @@ a{
 .grid-3 article svg{
   font-size: calc(3vmax + 5vmin + 20px);
   margin: 1rem 0;
+  color: var(--red);
 }
 .backdrop{
   position: fixed;
@@ -265,10 +273,11 @@ footer{
   margin-bottom: 1rem;
 }
 .ubicacion iframe{
-  width: clamp(300px, calc(30vw + 20vh), calc(30vw + 20vh));
-  height: clamp(300px, calc(30vw + 20vh), calc(30vw + 20vh));
+  width: clamp(300px, calc(30vmax + 30vmin), calc(30vmax + 30vmin));
+  height: clamp(200px, calc(20vmax + 20vmin), calc(20vmax + 20vmin));
+  box-shadow: 0 0 20px 3px var(--black);
   border-radius: 10px;
-  border: 3px solid var(--black);
+  border: none;
 }
 .gmail{
   display: flex;
@@ -279,11 +288,15 @@ footer{
   padding: 1rem 5vw;
   gap: 10px;
 }
+.gmail p, .gmail button{
+  font-size: clamp(20px, calc(10px + 1vmax), calc(10px + 1vmax));
+}
 .gmail input{
   border-radius: 5px;
   text-align: center;
   padding: 5px;
+  margin: 10px 0;
   background-color: transparent;
   border: 3px solid var(--black);
-  font-size: clamp(20px, calc(1vw + 10px), calc(1vw + 10px));
+  font-size: clamp(20px, calc(1vmax + 10px), calc(1vmax + 10px));
 }

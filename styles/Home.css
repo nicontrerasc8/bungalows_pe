@@ -11,9 +11,10 @@
      text-align: center;
 }
 .landing article iframe{
-     width: clamp(300px, calc(24vmax + 24vmin), calc(24vmax + 24vmin));
-     height: clamp(180px, calc(15vmax + 15vmin), calc(15vmax + 15vmin));
-     border: 3px solid var(--red);
+     width: clamp(300px, calc(27vmax + 27vmin), calc(27vmax + 27vmin));
+     height: clamp(200px, calc(18vmax + 18vmin), calc(18vmax + 18vmin));
+     box-shadow: 0 0 20px 3px var(--black);
+     border: none;
      border-radius: 10px;
      margin-bottom: 2rem;
 }
@@ -38,6 +39,7 @@
      display: flex;
      flex-direction: column;
      align-items: center;
+     background-color: var(--platinum);
      justify-content: center;
      margin-bottom: 2rem;
      padding: 2rem 5vw 2rem 5vw;
@@ -72,8 +74,9 @@
 }
 .bungalow iframe{
      margin: 20px auto;
-     height: calc(10vh + 30vw + 20px);
-     width: calc(10vh + 30vw + 20px);
+     width: clamp(300px, calc(27vmax + 27vmin), calc(27vmax + 27vmin));
+     height: clamp(200px, calc(18vmax + 18vmin), calc(18vmax + 18vmin));
+     box-shadow: 0 0 20px 3px var(--black);
 }
 .bungalow img{
      margin: 0 auto 2rem auto;
@@ -95,8 +98,11 @@
 }
 .bungalow-main-video{
      margin-top: 2rem;
-     height: calc(15vh + 20vw + 2rem);
-     width: calc(50vw + 15vh);
+     width: clamp(300px, calc(36vmax + 24vmin), calc(36vmax + 24vmin));
+     height: clamp(200px, calc(24vmax + 24vmin), calc(24vmax + 24vmin));
+     box-shadow: 0 0 20px var(--black);
+     border-radius: 10px;
+     border: none;
 }
 .bungalow h3{
      padding: 0rem 0 10px 0;

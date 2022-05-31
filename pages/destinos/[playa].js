@@ -37,13 +37,7 @@ const Bungalow = ({data}) => {
      {data.img && data.img.map((i, idx) => {
           return <img alt={data.Title} src={i} key={idx}/>
      })}
-     <div className='flex-wrap'>
-  {/*    <a href={`https://api.whatsapp.com/send?phone=51998855069&text=${`¡Hola!, me gustaría saber los precios del bungalow ${data.wa}.`}`}>
-          <button className='btn-secondary'>Consulta los precios</button>
-     </a> */}
-     {/* <button className='btn-secondary'>Ver ubicación</button> */}
-     </div>
-     {data.src && <iframe src={data.src} allowFullScreen={true}/> }
+     {data.src && <iframe className='place-main-video' src={data.src} allowFullScreen={true}/> }
     {
          data.ul &&  <>
          <h4>Incluye: </h4>
@@ -65,7 +59,7 @@ const Playa = ({Array}) => {
      const [ShowUbicacion, setShowUbicacion] = useState(false)
 
   return <>
-     <MetaTags title={Array.title + ' | Bungalows PE'}/>
+     <MetaTags title={Array.title + ' | Bungalows Perú'}/>
      <div className='page main-div' style={{background: "var(--platinum)"}}>
           <h2>{Array.title}</h2>
           <p style={{margin:"0 0 1rem 0"}}>
