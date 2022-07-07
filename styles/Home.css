@@ -59,7 +59,7 @@
 }
 .bungalow{
      margin-top: 2rem;
-     width: clamp(300px, 60%, 60%);
+     width: clamp(300px, 80%, 80%);
      box-shadow: 0 0 20px;
      background-color: var(--white);
      display: flex;
@@ -80,8 +80,8 @@
 }
 .bungalow img{
      margin: 0 auto 2rem auto;
-     height: calc(10vh + 25vw + 20px);
-     width: calc(10vh + 30vw + 20px);
+     height: calc(10vh + 35vw + 20px);
+     width: calc(10vh + 45vw + 20px);
 }
 @media screen and (max-width: 500px){
      .bungalow iframe{

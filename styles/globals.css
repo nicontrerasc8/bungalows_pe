@@ -24,12 +24,16 @@
 }
 .wa-button{
   position: fixed;
+  transition: .5s;
   z-index: 3;
   bottom: calc(5vh);
   right: calc(5vw);
   background-color: #48b855;
   border-radius: 50%;
   padding: 10px;
+}
+.wa-button:hover{
+  transform: translateY(-5px) rotate(15deg);
 }
 *{
   padding: 0;
