@@ -46,15 +46,20 @@ const NavBar = () => {
        </Link>
      <div className='buttons'>
           <Link href={"/destinos"}>
-          <button className={navSolidColor ? 'btn-tertiary' : 'btn-primary'}>
+          <button className={navSolidColor ? 'btn-tertiary' : 'btn-secondary'}>
                <FontAwesomeIcon icon={faSearchLocation}/> Buscar bungalows
           </button>
           </Link>
           <Link href={'/publica'}>
-               <button className='btn-secondary'>
+               <button className={navSolidColor ? 'btn-tertiary' : 'btn-secondary'}>
                     <FontAwesomeIcon icon={faHome}/> Publica tu bungalow
                </button>
           </Link>
+          <a href='https://mirror-races.myshopify.com/' target='_blank' rel='noreferrer'>
+               <button className={navSolidColor ? 'btn-tertiary' : 'btn-secondary'}>
+                    Productos
+               </button>
+          </a>
      </div>
      <div onClick={ChangeNavigationValue} className={OpenNav ? 'hamburger open-nav' : 'hamburger'}>
           <span className='hamburger-1'/>
