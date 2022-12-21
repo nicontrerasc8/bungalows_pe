@@ -93,12 +93,11 @@ export default Playa
 export async function getServerSideProps({query}){
      var {playa} = query
      var Array = []
-     if(playa == "punta-hermosa"){
-          Array = Destinations[1]
-     }
-     else if(playa == "oxapampa"){
-          Array = Destinations[0]
-     }
+     if(playa == "punta-hermosa") Array = Destinations[2]
+     
+     else if(playa == "oxapampa") Array = Destinations[1]
+     
+     else if (playa == "asia") Array = Destinations[0]
 
 
      return {props: {Array}}
