@@ -1,9 +1,13 @@
 import { faHome, faSearch, faSearchLocation } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Image from 'next/image'
+import {motion} from "framer-motion"
 import Link from 'next/link'
+import { useEffect, useRef, useState } from 'react'
 import Gmail from '../Components/Gmail'
 import MetaTags from '../Components/MetaTags'
 import { WhyPeru } from '../lib/arrays'
+import {FaChevronLeft, FaChevronRight} from "react-icons/fa"
 
 const WhyGrid = () => {
   return <div className='grid-3 why-peru'>
@@ -19,49 +23,79 @@ const WhyGrid = () => {
   </div>
 }
 
-const SVG = () => {
-  return <div className="custom-shape-divider-bottom-1639756025">
-    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" fill='#ececec'/> 
-    </svg>
-  </div>
-}
-
-const Landing = () => {
-  return <div className='landing'>
-    <article>
-    <iframe src="https://www.youtube.com/embed/vwXMasNC5SA?autoplay=1" 
-            title="Bungalows Perú" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-             allowFullScreen/>
-      <h2>
-      &quot;Siempre buscando el sol&quot;
-      </h2>
-      <h4>Brindamos el mejor hospedaje para que descubras el Perú</h4>
-      <div className='btns-landing'>
-        <Link href={"/destinos"}>
-        <button className='btn-primary'>
-          <FontAwesomeIcon icon={faSearchLocation}/> Buscar bungalows
-        </button>
-        </Link>
-        <Link href={"/publica"}>
-          <button className='btn-secondary'>
-          <FontAwesomeIcon icon={faHome}/> Publica tu bungalow
-          </button>
-        </Link>
-      </div>
-    </article>
-  </div>
-}
+const ImageData = [
+  {
+    img: "/ph.jpeg",
+    frase: "Encuentra el mejor hospedaje en Punta Hermosa",
+    link: "punta-hermosa"
+  },
+  {
+    img: "/back2.jpg",
+    frase: "Descubre las maravillas de Oxapampa",
+    link: "oxapampa"
+  },
+  {
+    img: "/asia.jpg",
+    frase: "Tu mejor estadía en Asia",
+    link: "asia"
+  }
+]
 
 
 export default function Home() {
+
+  const [Slide, setSlide] = useState(0)
+  const SlidesLength = ImageData.length
+  const timeout = useRef(null)
+  const NextSlide = () => {
+    setSlide(Slide => (Slide=== SlidesLength - 1 ? 0 : Slide+1))
+  }
+  const PrevSlide = () => setSlide(Slide => (Slide=== 0 ? SlidesLength - 1 : Slide-1))
+
+  useEffect(() => {
+    timeout.current = setTimeout(NextSlide, 9000);
+
+    return function(){
+      if(timeout.current) clearTimeout(timeout.current)
+    }
+
+  }, [Slide, SlidesLength])
+
   return <>
     <MetaTags/>
-    <Landing/>
-    <SVG/>  
-    <Gmail/>
-    <div className='rota180grados'><SVG/></div>
-    <div className='main-div'>
+    <div className='bg'>
+      {
+        ImageData.length && ImageData.map((info,idx) => {
+          if(idx === Slide)return <motion.div
+          initial={{ x: -100, opacity: 0}}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{x: -100}}
+          viewport={{ once: true }}
+           key={idx}>
+            <article>
+            <Image src={info.img} alt="Bungalows Perú" layout='fill'/>
+          </article>
+          <section className='bg-sec'>
+          <h2>{info.frase}</h2> 
+          <Link href={`/destinos/${info.link}`}>
+            <button className='btn-primary'>
+              Encuentra un hospedaje
+            </button>
+          </Link> 
+          </section>
+          </motion.div>
+        }) 
+      }
+      <section className='btns'>
+      <button onClick={PrevSlide}>
+        <FaChevronLeft/>
+      </button>
+      <button onClick={PrevSlide}>
+        <FaChevronRight/>
+      </button>
+      </section>
+    </div>
+    {/* <div className='main-div'>
       <h2>
         ¿Por qué elegir al Perú como destino turístico?
       </h2>
@@ -71,6 +105,6 @@ export default function Home() {
         Ver lugares turísticos
       </button>
       </Link>
-    </div>
+    </div> */}
   </>
 }

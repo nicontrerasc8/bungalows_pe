@@ -44,7 +44,7 @@ const NavBar = () => {
                </span>
           </a>
        </Link>
-     <div className='buttons'>
+     {/* <div className='buttons'>
           <Link href={"/destinos"}>
           <button className={navSolidColor ? 'btn-tertiary' : 'btn-secondary'}>
                <FontAwesomeIcon icon={faSearchLocation}/> Buscar bungalows
@@ -65,13 +65,9 @@ const NavBar = () => {
           <span className='hamburger-1'/>
           <span className='hamburger-2'/>
           <span className='hamburger-3'/>
-     </div>
+     </div> */}
   </nav>
-  <div class="custom-shape-divider-top-1644340731">
-    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class={navSolidColor ? 'shape-fill-red' : 'shape-fill-white'}></path>
-    </svg>
-</div>
+ 
   <BackDrop onClick={ChangeNavigationValue} isOn={OpenNav}>
           <motion.div className='btn-toggle-nav'
                onClick={(e) => e.stopPropagation()}

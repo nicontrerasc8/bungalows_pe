@@ -1,5 +1,5 @@
 nav{
-     background-color: var(--white);
+     background-color: white;
      color: var(--black);
      padding: 0px 5vw;
      transition: 1s;
@@ -9,16 +9,15 @@ nav{
      flex-direction: row;
      justify-content: space-between;
      align-items: center;
-     position: sticky;
+     position: fixed;
      overflow-x: hidden;
      top: 0;
      left: 0;
      z-index: 5;
 }
-nav.active{
-     background-color: var(--red);
-     color: var(--white);
-}
+/* nav.active{
+     background-color: var(--white);
+} */
 .buttons{
      display: flex;
      flex-direction: row;
@@ -64,8 +63,8 @@ nav .hamburger span{
      background-color: var(--black);
 }
 nav.active .hamburger span{
-     background-color: var(--white);
-}
+     background-color: var(--red);
+} 
 .open-nav .hamburger-1{
      transform: rotate(45deg);
      top: 16px;
