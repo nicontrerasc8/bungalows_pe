@@ -6,6 +6,75 @@
   --black: #130000;
   --gris: #201d1d;
 }
+.choose-peru{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: calc(10px + 1vmax);
+  margin: calc(5vh + 1rem) 5vw;
+  border-radius: 20px;
+  position: relative;
+}
+.choose-peru h2{
+  text-align: center;
+
+  font-size: clamp(30px, calc(2vmax + 1rem), calc(2vmax + 1rem));
+}
+header{
+  display: grid;
+  grid-template-columns: 45vw 1fr;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  gap: calc(3vmax + 10px);
+  background-color: var(--white);
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgb(150,150,150);
+  width: 100%;
+}
+header article{
+  position: relative;
+  width: 100%;
+  height: 45vw;
+}
+header section{
+  padding: calc(1vh + 1rem) 20px;
+}
+header section h3{
+  font-size: clamp(calc(1rem + 20px), calc(2vmax + 1vmin + 20px), calc(2vmax + 1vmin + 20px));
+  margin: 0;
+  padding: 10px 0;
+}
+header section h3 strong{
+  color: var(--secondary);
+}
+header section p{
+  font-size: clamp(20px, calc(1vmax + 5px), calc(1vmax + 5px));
+  margin: 0;
+}
+header article img{
+  border-radius: 20px;
+}
+@media screen and (max-width: 950px) {
+  header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  header section{
+    padding: 10px;
+  }
+  header article{
+    width: 90vw;
+    height: calc(90vw / 1.5);
+  }
+  .choose-peru header article{
+    height: 90vw;
+  }
+}
 .page{
   padding: calc(40px + 9rem) 5vw 2rem 5vw;
 }

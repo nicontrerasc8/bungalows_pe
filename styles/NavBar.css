@@ -89,4 +89,5 @@ nav.active .hamburger span{
      .cellphone-logo{display: block;}
      .buttons{display: none;}
      nav .hamburger{display: flex;}
+     footer h3{display: none;}
 }

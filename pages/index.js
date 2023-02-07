@@ -6,18 +6,31 @@ import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import Gmail from '../Components/Gmail'
 import MetaTags from '../Components/MetaTags'
+import {DropInFromLeft} from "../lib/animations"
 import { WhyPeru } from '../lib/arrays'
 import {FaChevronLeft, FaChevronRight} from "react-icons/fa"
+import Carrusel from '../Components/Carrusel'
 
 const WhyGrid = () => {
-  return <div className='grid-3 why-peru'>
+  return <div className='choose-peru'>
+    <h2>
+      ¿Por qué elegir al Perú como destino turístico?
+    </h2>
     {
       WhyPeru && WhyPeru.map((data,idx) => {
-        return <article key={idx}>
-          <FontAwesomeIcon icon={data.icon}/>
-          <h4>{data.title}</h4>
-          <p>{data.text}</p>
-        </article>
+        return <motion.header 
+        initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  viewport={{ once: true }}
+        key={idx}>
+          <article>
+            <Carrusel Arr={data.img}/>
+          </article>
+          <section>
+            <h3>{data.title}</h3>
+            <p>{data.text}</p>
+          </section>
+        </motion.header>
       })
     }
   </div>
@@ -95,16 +108,6 @@ export default function Home() {
       </button>
       </section>
     </div>
-    {/* <div className='main-div'>
-      <h2>
-        ¿Por qué elegir al Perú como destino turístico?
-      </h2>
-      <WhyGrid/>
-      <Link href={"/destinos"}>
-      <button className='btn-secondary'>
-        Ver lugares turísticos
-      </button>
-      </Link>
-    </div> */}
+    <WhyGrid/>
   </>
 }

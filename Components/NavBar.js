@@ -6,8 +6,6 @@ import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import { DropInFromLeft } from '../lib/animations';
 import BackDrop from './BackDrop';
-import Logo from "../public/favicon.ico"
-import LogoWhite from "../public/logo-white.png"
 import { useRouter } from 'next/router';
 
 const NavBar = () => {
