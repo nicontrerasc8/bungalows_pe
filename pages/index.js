@@ -43,12 +43,12 @@ const ImageData = [
     link: "punta-hermosa"
   },
   {
-    img: "/back2.jpg",
+    img: "/back.jpeg",
     frase: "Descubre las maravillas de Oxapampa",
     link: "oxapampa"
   },
   {
-    img: "/asia.jpg",
+    img: "/asia.png",
     frase: "Tu mejor estadía en Asia",
     link: "asia"
   }
