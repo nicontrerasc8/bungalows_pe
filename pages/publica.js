@@ -19,6 +19,7 @@ const Publica = () => {
      <MetaTags title='Publica tu bungalow para alquilarlo o venderlo por medio de nuestra web.'/>
      <div className='page main-div'>
           <h2>Publica tu bungalow en nuestra página web.</h2>
+          <p>Te ayudamos a alquilar tu bungalow o casa. Escribe tus datos y ponte en contacto con nosotros.</p>
           <section className='form'>
                <label>Escribe tu nombre</label>
                <input value={Name} onChange={(e) => setName(e.target.value)}/>

@@ -10,12 +10,20 @@ const Bungalow = ({data}) => {
      const [ShowDireccion, setShowDireccion] = useState(false)
 
      return <article className="bungalow">
+     
+     {
+          ShowDireccion && <>
+          <p>Dirección: {data.direccion}</p>
+          {data.maps &&  <iframe src={data.maps} loading="lazy"/>}
+          </>
+     }
+     {data.img && data.img.map((i, idx) => {
+          return <img alt={data.Title} src={i} key={idx}/>
+     })}
+     {data.src && <iframe className='place-main-video' src={data.src} allowFullScreen={true}/> }
+     <section>
      <h3>{data.Title}</h3>
      <h6>para {data.for}</h6>
-     <button style={{marginBottom: "1rem"}}
-          className='btn-primary' onClick={() => setShowDireccion(!ShowDireccion)}>
-          <FontAwesomeIcon icon={ShowDireccion ? faEyeSlash : faEye}/> Dirección
-     </button>
      {
           data.precios && <>
           <h5>Precios por noche:</h5>
@@ -29,16 +37,6 @@ const Bungalow = ({data}) => {
           </>
      }
      {
-          ShowDireccion && <>
-          <p>Dirección: {data.direccion}</p>
-          {data.maps &&  <iframe src={data.maps} loading="lazy"/>}
-          </>
-     }
-     {data.img && data.img.map((i, idx) => {
-          return <img alt={data.Title} src={i} key={idx}/>
-     })}
-     {data.src && <iframe className='place-main-video' src={data.src} allowFullScreen={true}/> }
-    {
          data.ul &&  <>
          <h4>Incluye: </h4>
          <ul>
@@ -51,6 +49,7 @@ const Bungalow = ({data}) => {
               }
          </ul></>
     }
+     </section>
 </article>
 }
 
