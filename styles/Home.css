@@ -152,7 +152,7 @@
      box-shadow: 0 0 20px 3px var(--black);
 }
 .bungalow img{
-     margin: 0 auto 2rem auto;
+     margin: 0 auto;
      height: calc(10vh + 35vw + 20px);
      width: calc(10vh + 45vw + 20px);
 }
