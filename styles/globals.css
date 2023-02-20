@@ -6,6 +6,9 @@
   --black: #130000;
   --gris: #201d1d;
 }
+.top6rem{
+  margin-top: 6rem;
+}
 .choose-peru{
   display: flex;
   flex-direction: column;
@@ -403,9 +406,15 @@ footer{
   margin: 0 auto calc(2rem + 3vh) auto;
   width: clamp(300px, 60%, 60%);
 }
+.blog-article.top7rem{
+  margin: 7rem auto calc(2rem + 3vh) auto;
+}
 .blog-article h1{
   font-size: clamp(calc(1rem + 18px + 1vmin), calc(2vmax + 10px), calc(2vmax + 10px));
-  padding: 3vh 0 2vh 0;
+  padding: 3vh 0 1vh 0;
+}
+.blog-article span{
+  margin-bottom: calc(1vh + 10px);
 }
 .blog-article img{
   width: clamp(300px, 100%, 100%);

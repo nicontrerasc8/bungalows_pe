@@ -12,8 +12,9 @@ function Blog({Array}){
     
     
 
-  return <div className='blog-article'>
+  return <div className='blog-article top7rem'>
         <h1>{Array.title}</h1>
+        <span>Escrito por: Cristóbal Espejo</span>
         <img src={Array.img} alt="Bungalows Perú"/>
         {
             ReactHtmlParser(Array.content)
