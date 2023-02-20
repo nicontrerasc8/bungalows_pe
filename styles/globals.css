@@ -414,7 +414,6 @@ footer{
 }
 .blog-article h3{
   font-size: calc(1vmax + 1vmin + 1rem);
-  margin: calc(3vh + 1rem) 0 5px 0;
 }
 .btn input{
 display: none;
@@ -431,6 +430,7 @@ display: none;
 }
 .blog-article p{
   font-size: calc(1rem + 1vmin);
+  margin: 5px 0 calc(3vh + 1rem) 0;
 }
 .blog-main{
   display: flex;
