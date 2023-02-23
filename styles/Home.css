@@ -1,6 +1,15 @@
+.main-bg{
+     margin-top: 8rem;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     padding: 0 5vw;
+     text-align: center;
+}
 .bg{
      position: relative;
-     margin-top: 8rem;
+     margin-top: calc(3vh + 10px);
      align-items: center;
      display: flex;
      flex-direction: column;
@@ -45,6 +54,9 @@
 .bg div h2{
      margin-bottom: 10px;
      font-size: clamp(30px, calc(3vmax + 15px), calc(3vmax + 15px));
+}
+.main-bg h2{
+     font-size: clamp(25px, calc(2vmax + 20px), calc(3vmax + 15px));
 }
 .bg article{
      position: relative;
@@ -201,4 +213,19 @@
 .bungalow li{
      margin: 15px;
      list-style-type: circle;
+}
+.for{
+     text-align: center;
+     align-items: center;
+     background-color: var(--platinum);
+     justify-content: center;
+     padding: calc(2vh + 10px) 5vw;
+     box-shadow: 0 0 10px var(--red);
+}
+.for-h2{
+     font-size: clamp(25px, calc(2vmax + 10px), calc(2vmax + 10px));
+     margin-bottom: calc(2vh + 10px);
+}
+.for button{
+     font-size: calc(1vmax + 15px);
 }

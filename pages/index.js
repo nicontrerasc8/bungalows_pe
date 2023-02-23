@@ -8,49 +8,41 @@ import Gmail from '../Components/Gmail'
 import MetaTags from '../Components/MetaTags'
 import {DropInFromLeft} from "../lib/animations"
 import { WhyPeru } from '../lib/arrays'
-import {FaChevronLeft, FaChevronRight} from "react-icons/fa"
+import {FaChevronLeft, FaChevronRight, FaCity, FaMountain, FaUmbrellaBeach} from "react-icons/fa"
 import Carrusel from '../Components/Carrusel'
 
-const WhyGrid = () => {
-  return <div className='choose-peru'>
-    <h2>
-      ¿Por qué elegir al Perú como destino turístico?
-    </h2>
-    {
-      WhyPeru && WhyPeru.map((data,idx) => {
-        return <motion.header 
-        initial={{ opacity: 0 }}
-  whileInView={{ opacity: 1 }}
-  viewport={{ once: true }}
-        key={idx}>
-          <article>
-            <Carrusel Arr={data.img}/>
-          </article>
-          <section>
-            <h3>{data.title}</h3>
-            <p>{data.text}</p>
-          </section>
-        </motion.header>
-      })
-    }
-  </div>
-}
+
 
 const ImageData = [
   {
     img: "/ph.jpeg",
-    frase: "Encuentra el mejor hospedaje en Punta Hermosa",
+    frase: "Hospedajes en Punta Hermosa",
     link: "punta-hermosa"
   },
   {
     img: "/back.jpeg",
-    frase: "Descubre las maravillas de Oxapampa",
+    frase: "Hospedajes en Oxapampa",
     link: "oxapampa"
   },
   {
     img: "/asia.png",
-    frase: "Tu mejor estadía en Asia",
+    frase: "Hospedajes en Asia",
     link: "asia"
+  }
+]
+
+const Data3 = [
+  {
+    title: "Descubrir nuevos lugares",
+    icon: <FaMountain/>
+  },
+  {
+    title: "Unas vacaciones para relajarse.",
+    icon: <FaUmbrellaBeach/>
+  },
+  {
+    title: "Salir de la ciudad y la rutina",
+    icon: <FaCity/>
   }
 ]
 
@@ -76,6 +68,9 @@ export default function Home() {
 
   return <>
     <MetaTags/>
+    <div className='main-bg'>
+    <h2>Te damos <span className='red'>alojamiento</span> para que descubras el <span className='red'>Perú</span></h2>
+    </div>
     <div className='bg'>
       {
         ImageData.length && ImageData.map((info,idx) => {
@@ -92,7 +87,7 @@ export default function Home() {
           <h2>{info.frase}</h2> 
           <Link href={`/destinos/${info.link}`}>
             <button className='btn-primary'>
-              Encuentra un hospedaje
+              Encuentra un alojamiento
             </button>
           </Link> 
           </section>
@@ -108,6 +103,28 @@ export default function Home() {
       </button>
       </section>
     </div>
-    <WhyGrid/>
+    <section className='for'>
+    <p className='for-h2'>Tenemos el hospedaje apropiado para todos aquellos que buscan</p>
+    <div className='grid-3'>
+      {
+        Data3.length && Data3.map((info, idx) => {
+          return <motion.article 
+          initial={{ opacity: 0, scale: 0.5 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          
+          key={idx}>
+            {info.icon}
+            <h4>{info.title}</h4>
+          </motion.article>
+        }) 
+      }
+    </div>
+    <Link href={"/blog/por-que-peru"}>
+      <button className='btn-primary'>
+        ¿Por qué elegir Perú?
+      </button>
+    </Link>
+    </section>
   </>
 }

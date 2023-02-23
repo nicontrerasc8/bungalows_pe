@@ -6,6 +6,9 @@
   --black: #130000;
   --gris: #201d1d;
 }
+.red{
+  color: var(--red);
+}
 .top6rem{
   margin-top: 6rem;
 }
@@ -15,7 +18,7 @@
   align-items: center;
   justify-content: center;
   gap: calc(10px + 1vmax);
-  margin: calc(5vh + 1rem) 5vw;
+  margin: 8rem 5vw calc(5vh + 1rem) 5vw;
   border-radius: 20px;
   position: relative;
 }
@@ -116,9 +119,7 @@ header article img{
   outline: none;
   box-sizing: border-box;
 }
-h1, h2, h3, h4, h5, h6, button, input, label, .logo{
-  font-family: 'Poppins', sans-serif;
-}
+
 body{overflow-x: hidden;}
 a{
   text-decoration: none;
@@ -179,7 +180,7 @@ a{
   margin-bottom: 2rem;
 }
 .grid-3 article{
-  width: clamp(300px, 25%, 25%);
+  width: clamp(300px, 28%, 28%);
   display: flex;
   flex-direction: column;
   align-items: center;
