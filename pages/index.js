@@ -126,5 +126,26 @@ export default function Home() {
       </button>
     </Link>
     </section>
+    <div className='bg'>
+    <motion.div
+          initial={{ x: -100, opacity: 0}}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{x: -100}}
+          viewport={{ once: true }}
+           >
+            <article>
+            <Image src={"/vacation.jpg"} alt="Bungalows Perú" layout='fill'/>
+          </article>
+          <section className='bg-sec'>
+          <h2>Disfruta tus vaciones al máximo</h2>
+          <p>Encuentra el hospedaje apropiado para tí y aprovecha al máximo cada aventura.</p>
+          <Link href={"/destinos"}>
+            <button className='btn-primary'>
+              Ver Hospedajes
+            </button>
+          </Link>
+          </section>
+          </motion.div>
+    </div>
   </>
 }

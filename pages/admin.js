@@ -64,7 +64,14 @@ const Admin = () => {
                content: HTMLContent 
            });
       
-          await batch.commit().then(toast.success("Está subido"))
+          await batch.commit().then(
+            toast.success("Está subido"),
+            setH3(""),
+            setP(""),
+            setTitle(""),
+            setIMGURL(""),
+            setHTMLContent("")
+            )
      }
 
      

@@ -20,14 +20,16 @@ const ChooseDestination = () => {
       <MetaTags/>
       {Loading && <LoadingContainer/>}
       <div className='page main-div'>
-      <h2>Elige tu destino favorito</h2>
-        <section className='destinations grid-2'>
+      <h2 style={{marginBottom: "calc(3vh + 10px)"}}>Elige tu destino favorito</h2>
+        <section className='destinations grid-3'>
         {
           Destinations && Destinations.map((data, idx) => {
             return <Link key={idx} href={`/destinos/${data.path}`}>
-              <article key={idx}>
-              <img alt={data.title} src={data.img}/>
-              <h4>{data.title}</h4>
+              <article>
+             <div className='img'>
+              <Image src={data.img} layout="fill" fill alt='Bungalows Perú'/>
+             </div>
+              <h2>{data.title}</h2>
             </article>
             </Link>
           })

@@ -7,6 +7,7 @@ import React, { useEffect, useState } from 'react';
 import { DropInFromLeft } from '../lib/animations';
 import BackDrop from './BackDrop';
 import { useRouter } from 'next/router';
+import { FaBlog, FaBook, FaHome, FaPlane, FaPlaneDeparture, FaUmbrellaBeach, FaWarehouse } from 'react-icons/fa';
 
 const NavBar = () => {
      
@@ -42,6 +43,18 @@ const NavBar = () => {
                </span>
           </a>
        </Link>
+       <div className='buttons'>
+       <Link href={"/destinos"}>
+          <button className="btn-primary">
+               <FaHome/> Alojamientos
+          </button>
+          </Link>
+          <Link href={"/blog"}>
+          <button className="btn-secondary">
+               <FaPlaneDeparture/> Blog
+          </button>
+          </Link>
+       </div>
      {/* <div className='buttons'>
           <Link href={"/destinos"}>
           <button className={navSolidColor ? 'btn-tertiary' : 'btn-secondary'}>
@@ -58,12 +71,12 @@ const NavBar = () => {
                     Productos
                </button>
           </a>
-     </div>
+     </div>*/}
      <div onClick={ChangeNavigationValue} className={OpenNav ? 'hamburger open-nav' : 'hamburger'}>
           <span className='hamburger-1'/>
           <span className='hamburger-2'/>
           <span className='hamburger-3'/>
-     </div> */}
+     </div> 
   </nav>
  
   <BackDrop onClick={ChangeNavigationValue} isOn={OpenNav}>
@@ -75,10 +88,10 @@ const NavBar = () => {
                exit="exit"
           >
                     <button className='btn-primary' onClick={() => ChangeRoute("/destinos")}>
-                         <FontAwesomeIcon icon={faSearchLocation}/> Buscar bungalows
+                         Alojamientos
                     </button>
-                    <button className='btn-secondary' onClick={() => ChangeRoute("/publica")}>
-                         <FontAwesomeIcon icon={faHome}/> Publica tu bungalow
+                    <button className='btn-secondary' onClick={() => ChangeRoute("/blog")}>
+                         Blog
                     </button>
                
                <a target={"_blank"} rel='noreferrer' href={'https://www.instagram.com/bungalows_pe/'}>

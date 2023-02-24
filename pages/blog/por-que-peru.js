@@ -2,9 +2,12 @@ import React from 'react'
 import Carrusel from '../../Components/Carrusel'
 import { WhyPeru } from '../../lib/arrays'
 import {motion} from "framer-motion"
+import MetaTags from '../../Components/MetaTags'
 
 const PorquePeru = () => {
-  return <div className='choose-peru'>
+  return <>
+  <MetaTags title="¿Por qué elegir al Perú como destino turístico?"/>
+  <div className='choose-peru'>
   <h2>
     ¿Por qué elegir al Perú como destino turístico?
   </h2>
@@ -26,6 +29,7 @@ viewport={{ once: true }}
     })
   }
 </div>
+</>
 }
 
 export default PorquePeru
