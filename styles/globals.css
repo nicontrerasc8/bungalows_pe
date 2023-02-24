@@ -474,9 +474,11 @@ display: none;
   justify-content: center;
   align-items: center;
   gap: calc(3vmax + 3vmin);
+  position: relative;
   margin-top: 3vh;
 }
 .blog-main section article{
+  position: relative;
   background-color: var(--white);
   box-shadow: 0 0 10px var(--red);
   border-radius: 10px;

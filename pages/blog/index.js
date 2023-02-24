@@ -2,6 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 import MetaTags from '../../Components/MetaTags'
 import { BlogArr } from '../../lib/arrays'
+import {motion} from "framer-motion"
 
 const Blog = () => {
   return <>
@@ -14,7 +15,11 @@ const Blog = () => {
   <section>
   {
       BlogArr.length && BlogArr.map((info,idx) => {
-          return <article key={idx}>
+          return <motion.article 
+          initial={{ opacity: 0, scale: 0.5 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          key={idx}>
             <img src={info.img}/>
             <div>
               <h5>{info.title}</h5>
@@ -24,7 +29,7 @@ const Blog = () => {
                 </button>
               </Link>
             </div>
-          </article>
+          </motion.article>
       })
   }
   </section>
