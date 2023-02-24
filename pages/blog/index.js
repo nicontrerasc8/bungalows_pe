@@ -10,6 +10,7 @@ const Blog = () => {
   <h2>
     Blog
   </h2>
+  <p>En este espacio, hablamos sobre lugares que puedes visitar y comidas que puedes degustar en cada uno de tus viajes.</p>
   <section>
   {
       BlogArr.length && BlogArr.map((info,idx) => {

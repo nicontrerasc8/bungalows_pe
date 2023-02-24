@@ -462,6 +462,11 @@ display: none;
   align-items: center;
   justify-content: center;
 }
+.blog-main p{
+  text-align: center;
+  margin: 10px 0;
+  font-size: clamp(18px, calc(1vmax + 10px), calc(1vmax + 10px));
+}
 .blog-main section{
   display: flex;
   flex-wrap: wrap;
