@@ -31,6 +31,21 @@ nav button{
 }
 .logo{
      font-size: clamp(20px, calc(2vmax - 1vmin + 1rem), calc(2vmax - 1vmin + 1rem));
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     justify-content: center;
+}
+.logo article{
+     position: relative;
+     width: calc(3rem + 20px);
+     height: 5rem;
+     margin-right: 10px;
+}
+@media screen and (max-width: 768px){
+     .logo strong{
+          display: none;
+     }
 }
 .cellphone-logo{
      display: none;

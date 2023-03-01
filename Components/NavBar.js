@@ -37,11 +37,14 @@ const NavBar = () => {
   return <>
       <nav className={navSolidColor ? 'active' : undefined}>
        <Link href={"/"}>
-          <a>
                <span className='logo'>
-                   <FontAwesomeIcon icon={faSuitcase}/> Bungalows Perú
+                   <article>
+                    <Image src={"/logo.png"} layout="fill" fill/>
+                    </article> 
+                    <strong>
+                         Bungalows Perú
+                    </strong>
                </span>
-          </a>
        </Link>
        <div className='buttons'>
        <Link href={"/destinos"}>
