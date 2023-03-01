@@ -503,3 +503,22 @@ display: none;
  .blog-main div button{
   font-size: calc(10px + 1vmax);
  }
+ .go-to-oxacorredores{
+  background-color: var(--platinum);
+  position: relative;
+  padding: calc(3vh + 5px) 2%;
+  border-radius: 20px;
+  box-shadow: 0 0 10px var(--red);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.go-to-oxacorredores h3{
+  font-size: clamp(30px, calc(2vmax + 10px), calc(2vmax + 10px));
+  margin: calc(1vh + 15px) 0;
+}
+.go-to-oxacorredores button{
+  font-size: clamp(25px, calc(1vmax + 10px), calc(1vmax + 10px));
+}

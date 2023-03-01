@@ -10,6 +10,7 @@ import {DropInFromLeft} from "../lib/animations"
 import { WhyPeru } from '../lib/arrays'
 import {FaChevronLeft, FaChevronRight, FaCity, FaMountain, FaUmbrellaBeach} from "react-icons/fa"
 import Carrusel from '../Components/Carrusel'
+import GoToOxaCorredores from '../Components/Go-To-OxaCorredores'
 
 
 
@@ -147,5 +148,6 @@ export default function Home() {
           </section>
           </motion.div>
     </div>
+    <GoToOxaCorredores/>
   </>
 }
