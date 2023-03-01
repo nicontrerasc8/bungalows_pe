@@ -467,7 +467,7 @@ display: none;
   margin: 10px 0;
   font-size: clamp(18px, calc(1vmax + 10px), calc(1vmax + 10px));
 }
-.blog-main section{
+.blog-main section, .other-articles section{
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -477,14 +477,14 @@ display: none;
   position: relative;
   margin-top: 3vh;
 }
-.blog-main section article{
+.blog-main section article, .other-articles section article{
   position: relative;
   background-color: var(--white);
   box-shadow: 0 0 10px var(--red);
   border-radius: 10px;
   width: clamp(300px, 25vw, 25vw);
 }
-.blog-main section article img{
+.blog-main section article img, .other-articles section article img{
   width: 100%;
   border-radius: 10px;
 }
@@ -521,4 +521,32 @@ display: none;
 }
 .go-to-oxacorredores button{
   font-size: clamp(25px, calc(1vmax + 10px), calc(1vmax + 10px));
+}
+.other-articles {
+  background-color: var(--platinum);
+  padding: calc(2vh + 1rem) 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--red);
+}
+.other-articles h4{
+  font-size: clamp(25px, calc(2vmax + 10px), calc(2vmax + 10px));
+}
+.other-articles section article{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.other-articles section article h5{
+  font-size: clamp(20px, calc(1vmax + 10px), calc(1vmax + 10px + 1vmin));
+  padding: calc(1vh + 10px) 5%;
+}
+.other-articles section article button{
+  font-size: clamp(20px, calc(1vmax + 5px), calc(1vmax + 10px + 1vmin));
+  margin-bottom: calc(1vh + 10px);
 }

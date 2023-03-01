@@ -1,15 +1,29 @@
-import { useRouter } from 'next/router';
+import {motion} from "framer-motion"
 import React, { useEffect, useState } from 'react';
 import { firestore, postToJSON } from '../../lib/firebase'; 
 import ReactHtmlParser from 'react-html-parser';
 import MetaTags from '../../Components/MetaTags';
+import { BlogArr } from '../../lib/arrays';
+import Link from "next/link";
 
 
-function Blog({Array}){
+function Blog({Array, slug}){
+
+    const [OtherArticles, setOtherArticles] = useState([])
 
     useEffect(() => {
-      console.log(Array)
-    }, [Array])
+      var arr = []
+      for (let i = 0; i < 3; i++) {
+        var Article 
+        do {
+          var is = false
+          Article = BlogArr[Math.floor(Math.random() * BlogArr.length)]
+          is = (Article.link == slug || arr.includes(Article))
+        } while (is);
+        arr.push(Article)
+      }
+      setOtherArticles(arr)
+    }, [Array, ])
     
     
 
@@ -22,7 +36,33 @@ function Blog({Array}){
         {
             ReactHtmlParser(Array.content)
         }
-     </div></>
+     </div>
+    <div className="other-articles">
+      <h4>También te puede interesar</h4>
+      <section>
+  {
+      OtherArticles.length && OtherArticles.map((info,idx) => {
+          return <motion.article 
+          initial={{ opacity: 0, scale: 0.5 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          key={idx}>
+            <img src={info.img}/>
+            <div>
+              <h5>{info.title}</h5>
+              <Link href={`/blog/${info.link}`}>
+                <button className='btn-primary'>
+                  Leer artículo
+                </button>
+              </Link>
+            </div>
+          </motion.article>
+      })
+  }
+  </section>
+    </div>
+     
+     </>
 };
 
 export default Blog;
@@ -32,6 +72,6 @@ export async function getServerSideProps({query}){
      var Aux = firestore.doc(`blog/${slug}`)
      var Array = postToJSON(await Aux.get());
 
-     return {props:{Array}}
+     return {props:{Array, slug}}
 }
 
