@@ -5,6 +5,8 @@ import {motion} from "framer-motion"
 import MetaTags from '../../Components/MetaTags'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStore } from '@fortawesome/free-solid-svg-icons'
 
 const OxaHaus = () => {
 
@@ -39,6 +41,11 @@ const OxaHaus = () => {
         </div>
         <h3>Productos de calidad</h3>
         <p>Aquí podrás conseguir las mejores carnes premium, chorizos, cecina, cerdo y cordero. También productos naturales traídos de Oxapampa, como miel, polen, café, quesos, yogures, leche natural, chocolate y cervezas artesanales. </p>
+        <a href='https://www.oxahaus.com/' target={"_blank"} rel="noreferrer" className='oxahaus-btn'>
+            <button className='btn-primary'>
+                <FontAwesomeIcon icon={faStore}/> Visitar la página web
+            </button>
+        </a>
         <p>La tienda está ubicada en Jirón Samoa 382, La Molina.</p>
         <iframe style={{marginTop: "2vh + 10px"}} src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.886337062216!2d-77.00119678518675!3d-12.119928791418575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c7fd1ffc0dff%3A0x1993b73acb9737cd!2sOxaHaus!5e0!3m2!1ses-419!2spe!4v1677703545935!5m2!1ses-419!2spe'/>
      </div>

@@ -568,3 +568,9 @@ display: none;
 .imgs-blog img{
   width: clamp(300px, 30%, 30%);
 }
+.oxahaus-btn{
+  margin: 0 auto calc(2vh + 10px) auto;
+}
+.oxahaus-btn button{
+  font-size: clamp(20px, calc(1vmax + 10px), calc(1vmax + 10px));
+}
