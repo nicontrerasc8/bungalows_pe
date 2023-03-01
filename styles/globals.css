@@ -437,6 +437,14 @@ footer svg{
 .blog-article h3{
   font-size: calc(1vmax + 1vmin + 1rem);
 }
+.blog-article iframe{
+  margin: auto;
+  width: clamp(300px, calc(30vw + 20vh), calc(30vw + 20vh));
+  height: clamp(200px, calc(20vw + 20vh), calc(20vw + 20vh));
+  border-radius: 20px;
+  border: 0;
+  box-shadow: 0 0 10px var(--red);
+}
 .btn input{
 display: none;
 }
@@ -549,4 +557,14 @@ display: none;
 .other-articles section article button{
   font-size: clamp(20px, calc(1vmax + 5px), calc(1vmax + 10px + 1vmin));
   margin-bottom: calc(1vh + 10px);
+}
+.imgs-blog{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: calc(1vmax + 10px);
+}
+.imgs-blog img{
+  width: clamp(300px, 30%, 30%);
 }
