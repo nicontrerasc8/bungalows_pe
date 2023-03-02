@@ -38,7 +38,7 @@ nav button{
 }
 .logo article{
      position: relative;
-     width: calc(3rem + 20px);
+     width: calc(5rem / 1.61);
      height: 5rem;
      margin-right: 10px;
 }
