@@ -32,7 +32,9 @@ const OxaHaus = () => {
   <div className='blog-article top7rem'>
         <h1>Selvámonos, el festival de música de Oxapampa.</h1>
         <span>Escrito por: Cristóbal Espejo</span>
-        <img src={"/selvamonos.jpg"} alt="Bungalows Perú"/>
+        <img src={
+          "https://firebasestorage.googleapis.com/v0/b/pr-verano.appspot.com/o/uploads%2F578cc4b4-484e-480c-8eb8-b8f363baee92%2F1677720451267.png?alt=media&token=6caadce6-6dfa-4ac9-987c-f0828878a7a9"
+        } alt="Bungalows Perú"/>
         <p>Selvámonos es un evento que se realiza entre el 30 de junio y 1ro de julio de cada año. Este festival invita a personas de todo el Perú a conocer Oxapampa y disfrutar de un concierto musical espectacular. Selvámonos reúne a algunos de los artistas más talentosos de Perú y del mundo, para ofrecer una experiencia inolvidable a los asistentes.</p>
         <h3>Un evento diferente</h3>
        <p>La edición más reciente de Selvámonos contó con una gran variedad de géneros musicales, desde la música electrónica y el rock, hasta el reggae y la cumbia. Además, el festival ofrece mucho más que sólo música: también hay talleres de arte y cultura, proyecciones de cine y una amplia selección de comida y bebida.</p>
