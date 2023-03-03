@@ -3,8 +3,7 @@ import toast from 'react-hot-toast'
 import MetaTags from '../Components/MetaTags'
 import { firestore, STATE_CHANGED, storage } from '../lib/firebase'
 import uuid from 'react-uuid'
-import ReactHtmlParser from 'react-html-parser';
-
+import parse from "html-react-parser"
 
 
 const Admin = () => {
@@ -56,13 +55,29 @@ const Admin = () => {
 
 
      const Submit = async () => {
-               const Doc = firestore.doc(`blog/${uuid()}`)
+      var uid = uuid()
+      let data = {
+        id: uid,
+        img: downloadURL,
+        content: HTMLContent,
+        title: Title  
+      }
+               const Doc = firestore.doc(`blog/${uid}`)
                const batch = firestore.batch();
-               batch.set(Doc, { 
-               title: Title,
-               img: downloadURL,
-               content: HTMLContent 
-           });
+               batch.set(Doc, data);
+
+               fetch('/api/articles', {
+                method: 'POST',
+                headers: {
+                  'Accept': 'application/json, text/plain, */*',
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+              }).then((res) => {
+                  console.log('Response received')
+                  if (res.status === 200) console.log('Response succeeded!')
+                  
+              })
       
           await batch.commit().then(
             toast.success("Está subido"),
@@ -95,7 +110,7 @@ const Admin = () => {
     <p className='by'>Por: Grace</p>
   <img src={IMGURL} alt={IMGURL ? "Imagen" : "Aquí va la imagen central"}/>
     {
-      ReactHtmlParser(HTMLContent)
+      parse(HTMLContent)
     }
   </div>
   </>

@@ -1,7 +1,7 @@
 import {motion} from "framer-motion"
 import React, { useEffect, useState } from 'react';
 import { firestore, postToJSON } from '../../lib/firebase'; 
-import ReactHtmlParser from 'react-html-parser';
+import parse from "html-react-parser"
 import MetaTags from '../../Components/MetaTags';
 import { BlogArr } from '../../lib/arrays';
 import Link from "next/link";
@@ -34,7 +34,7 @@ function Blog({Array, slug}){
         <span>Escrito por: Cristóbal Espejo</span>
         <img src={Array.img} alt="Bungalows Perú"/>
         {
-            ReactHtmlParser(Array.content)
+            parse(Array.content)
         }
      </div>
     <div className="other-articles">
