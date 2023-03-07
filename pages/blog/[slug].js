@@ -5,11 +5,13 @@ import parse from "html-react-parser"
 import MetaTags from '../../Components/MetaTags';
 import { BlogArr } from '../../lib/arrays';
 import Link from "next/link";
+import UseCartContext from "../../lib/context";
 
 
 function Blog({Array, slug}){
 
     const [OtherArticles, setOtherArticles] = useState([])
+    const {Language} = UseCartContext()
 
     useEffect(() => {
       var arr = []
@@ -18,7 +20,7 @@ function Blog({Array, slug}){
         do {
           var is = false
           Article = BlogArr[Math.floor(Math.random() * BlogArr.length)]
-          is = (Article.link == slug || arr.includes(Article))
+          is = (Article.link == slug || arr.includes(Article) || Language.id != Article.l)
         } while (is);
         arr.push(Article)
       }

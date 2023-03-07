@@ -8,11 +8,13 @@ import { DropInFromLeft } from '../lib/animations';
 import BackDrop from './BackDrop';
 import { useRouter } from 'next/router';
 import { FaBlog, FaBook, FaHome, FaPlane, FaPlaneDeparture, FaUmbrellaBeach, FaWarehouse } from 'react-icons/fa';
+import UseCartContext from '../lib/context';
 
 const NavBar = () => {
      
      const [navSolidColor, setNavSolidColor] = useState(false)
      const [OpenNav, setOpenNav] = useState(false);
+     const {ChangeLanguage, Language} = UseCartContext()
 
      const ChangeNavigationValue = () => setOpenNav(!OpenNav)
 
@@ -49,14 +51,20 @@ const NavBar = () => {
        <div className='buttons'>
        <Link href={"/destinos"}>
           <button className="btn-primary">
-               <FaHome/> Alojamientos
+               <FaHome/> {Language.navBtn1}
           </button>
           </Link>
           <Link href={"/blog"}>
           <button className="btn-secondary">
-               <FaPlaneDeparture/> Blog
+               <FaPlaneDeparture/> {Language.navBtn2}
           </button>
           </Link>
+          <button className='btn-tertiary' onClick={() => ChangeLanguage(1)}>
+               🇪🇸
+          </button>
+          <button className='btn-tertiary' onClick={() => ChangeLanguage(2)}>
+               🇬🇧
+          </button>
        </div>
      {/* <div className='buttons'>
           <Link href={"/destinos"}>
@@ -91,10 +99,10 @@ const NavBar = () => {
                exit="exit"
           >
                     <button className='btn-primary' onClick={() => ChangeRoute("/destinos")}>
-                         Alojamientos
+                    {Language.navBtn1}
                     </button>
                     <button className='btn-secondary' onClick={() => ChangeRoute("/blog")}>
-                         Blog
+                    {Language.navBtn2}
                     </button>
                
                <a target={"_blank"} rel='noreferrer' href={'https://www.instagram.com/bungalows_pe/'}>

@@ -10,6 +10,7 @@ import { Toaster } from 'react-hot-toast';
 import { useRouter } from 'next/router';
 import * as ga from "../lib/analytics"
 import Script from 'next/script';
+import { ContextProvider } from '../lib/context';
 
 function MyApp({ Component, pageProps }) {
 
@@ -38,7 +39,7 @@ function MyApp({ Component, pageProps }) {
 
 
   return (
-      <>
+      <ContextProvider>
       {Loading && <LoadingContainer/>}
       <NavBar/>
       <Component {...pageProps} />
@@ -75,7 +76,7 @@ function MyApp({ Component, pageProps }) {
       />
       <WhatsAppButton/>
       <Footer/>
-    </>
+    </ContextProvider>
   )
 }
 

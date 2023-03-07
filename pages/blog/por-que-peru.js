@@ -5,42 +5,44 @@ import {motion} from "framer-motion"
 import MetaTags from '../../Components/MetaTags'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import UseCartContext from '../../lib/context'
 
 const PorquePeru = () => {
 
 
   const [OtherArticles, setOtherArticles] = useState([])
+  const {Language} = UseCartContext()
   const router = useRouter()
 
-    useEffect(() => {
+     useEffect(() => {
       var arr = []
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < (Language.id === 1 ? 3 : 1); i++) {
         var Article 
         do {
           var is = false
           Article = BlogArr[Math.floor(Math.random() * BlogArr.length)]
-          is = (Article.link === "por-que-peru" || arr.includes(Article))
+          is = (Article.link === "por-que-peru" || arr.includes(Article) || Article.l != Language.id)
         } while (is);
         arr.push(Article)
       }
       setOtherArticles(arr)
-    }, [Array, ])
+    }, [Array, Language, ]) 
 
   return <>
-  <MetaTags title="¿Por qué elegir al Perú como destino turístico?"/>
+  <MetaTags title={`${Language.whyPeruBlog.title} | Bungalows Perú`}/>
   <div className='choose-peru'>
   <h2>
-    ¿Por qué elegir al Perú como destino turístico?
+    {Language.whyPeruBlog.title}
   </h2>
   {
-    WhyPeru.length && WhyPeru.map((data,idx) => {
+    Language && Language.whyPeruBlog.data.length && Language.whyPeruBlog.data.map((data,idx) => {
       return <motion.header 
       initial={{ opacity: 0 }}
 whileInView={{ opacity: 1 }}
 viewport={{ once: true }}
       key={idx}>
         <article>
-          <Carrusel Arr={data.img}/>
+          <Carrusel Arr={WhyPeru[idx].img}/>
         </article>
         <section>
           <h3>{data.title}</h3>
@@ -73,7 +75,7 @@ viewport={{ once: true }}
       })
   }
   </section>
-    </div>
+    </div> 
 </>
 }
 
