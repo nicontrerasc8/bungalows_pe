@@ -96,6 +96,11 @@ nav.active .hamburger span{
      flex-direction: column;
      gap: 10px;
 }
+.btn-toggle-nav div{
+     display: flex;
+     flex-direction: row;
+     gap: 10px;
+}
 .btn-toggle-nav button{
      width: 100%;
      font-size: calc(2vmax + 10px);

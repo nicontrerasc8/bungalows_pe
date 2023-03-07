@@ -19,6 +19,11 @@ const NavBar = () => {
      const ChangeNavigationValue = () => setOpenNav(!OpenNav)
 
      const router = useRouter()
+
+     const ChangeLang = (e) => {
+          ChangeLanguage(e)
+          ChangeNavigationValue()
+     }
      
      const ChangeRoute = (route) => {
           router.push(route)
@@ -104,12 +109,19 @@ const NavBar = () => {
                     <button className='btn-secondary' onClick={() => ChangeRoute("/blog")}>
                     {Language.navBtn2}
                     </button>
-               
                <a target={"_blank"} rel='noreferrer' href={'https://www.instagram.com/bungalows_pe/'}>
                     <button className='btn-instagram'>
                          <FontAwesomeIcon icon={faCamera}/> Instagram
                     </button>
                </a>
+               <div>
+                    <button className='btn-tertiary' onClick={() => ChangeLang(1)}>
+                         🇪🇸
+                    </button>
+                    <button className='btn-tertiary' onClick={() => ChangeLang(2)}>
+                         🇬🇧
+                    </button>
+                    </div>
           </motion.div>
   </BackDrop>
   </>
