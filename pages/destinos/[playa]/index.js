@@ -1,17 +1,19 @@
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Link from 'next/link'
+import {FaInfoCircle} from "react-icons/fa"
 import { useRouter } from 'next/router'
 import React, {useEffect, useState} from 'react'
-import MetaTags from '../../Components/MetaTags'
-import { Destinations } from '../../lib/arrays'
-import UseCartContext from '../../lib/context'
+import MetaTags from '../../../Components/MetaTags'
+import { Destinations } from '../../../lib/arrays'
+import UseCartContext from '../../../lib/context'
 
-const Bungalow = ({data, For}) => {
+const Bungalow = ({data, For, idx, path}) => {
 
      const [ShowDireccion, setShowDireccion] = useState(false)
 
 
-     return <article className="bungalow">
+     return <article>
      
      {
           ShowDireccion && <>
@@ -38,19 +40,12 @@ const Bungalow = ({data, For}) => {
           </ul>
           </>
      }
-     {
-         data.ul &&  <>
-         <h4>Incluye: </h4>
-         <ul>
-              {
-                   data.ul.length > 0 && data.ul.map((data,idx) => {
-                        return <li key={idx}>
-                             {data}
-                        </li>
-                   })
-              }
-         </ul></>
-    }
+     <Link href={"/destinos/"+path+"/"+idx}>
+          <button className='btn-primary'>
+             <FaInfoCircle/>  Más información
+          </button>
+     </Link>
+     
      </section>
 </article>
 }
@@ -86,14 +81,17 @@ const Playa = ({Array}) => {
                     <iframe src={Arr.ubicacion} loading="lazy"/> 
                </div>
           }
-          {
-               Arr.src && <iframe className='bungalow-main-video' src={Arr.src} allowFullScreen={true}/>
-          }
+          
+          <section className='bungalows'>
           {
                Arr.bungalows && Arr.bungalows.length > 0 && Arr.bungalows.map((data,idx) => {
-                    return <Bungalow data={data} For={Language.destinationsFor} key={idx}/>
+                    return <Bungalow data={data} For={Language.destinationsFor} idx={idx} key={idx} path={Arr.link}/>
                }) 
           }
+          </section>
+          {
+               Arr.src && <iframe className='bungalow-main-video' src={Arr.src} allowFullScreen={true}/>
+          } 
      </div>
   </>
 }

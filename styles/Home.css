@@ -124,6 +124,9 @@
      margin-bottom: 2rem;
      padding: 8rem 5vw 2rem 5vw;
 }
+.main-div p{
+     text-align: center;
+}
 .main-div h2{
      margin: 1rem 0;
      text-align: center;
@@ -143,7 +146,7 @@
      box-shadow: 0 0 20px;
      background-color: var(--white);
      display: grid;
-     grid-template-columns: calc(10vh + 45vw + 20px) 1fr;
+     grid-template-columns: calc(10vh + 35vw + 20px) 1fr;
      justify-content: center;
      align-items: center;
      border-radius: 10px;
@@ -169,8 +172,8 @@
 }
 .bungalow img{
      margin: 0 auto;
-     height: calc(10vh + 35vw + 20px);
-     width: calc(10vh + 45vw + 20px);
+     height: calc(10vh + 30vw + 20px);
+     width: calc(10vh + 35vw + 20px);
 }
 @media screen and (max-width: 1000px){
      .bungalow iframe{
@@ -178,7 +181,7 @@
      }
      .bungalow img{
           width: 100%;
-          height: inherit;
+          height: auto;
      }
      .bungalow{
           border: none;
@@ -217,6 +220,54 @@
 .bungalow li{
      margin: 15px;
      list-style-type: circle;
+}
+.bungalows{
+     display: flex;
+     flex-wrap: wrap;
+     gap: calc(1vw + 1vh);
+     align-items: center;
+     justify-content: center;
+     margin-top: calc(2vh + 10px);
+}
+.bungalows article{
+     display: flex;
+     flex-direction: column;
+     position: relative;
+     align-items: center;
+     justify-content: center;
+     background-color: var(--white);
+     border-radius: 10px;
+     box-shadow: 0 0 10px var(--red);
+     width: clamp(300px, 27vw, 30vw);
+}
+.bungalows article section{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     padding: 10px 4%;
+}
+.bungalows article section h3{
+     font-size: clamp(20px, calc(2vmax + 10px), calc(2vmax + 10px));
+     text-align: center;
+}
+.bungalows article section h6{
+     text-align: center;
+     color: #222222;
+     margin: 5px 0 calc(1vh + 10px) 0;
+     font-size: clamp(20px, calc(1vmax + 5px), calc(2vmax + 10px));
+}
+.bungalows article img{
+     width: clamp(300px, 27vw, 30vw);
+     max-height: clamp(300px, 27vw, 30vw);
+     border-radius: 10px;
+}
+.bungalows button{
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     justify-content: center;
+     gap: 10px;
 }
 .for{
      text-align: center;
