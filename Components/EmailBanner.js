@@ -37,7 +37,7 @@ const EmailBanner = () => {
     useEffect(() => {
       setTimeout(() => {
         ChangeBannerVal()
-      }, 10000);
+      }, 45000);
     }, [])    
 
   return <BackDrop isOn={BannerOn} onClick={ChangeBannerVal}>
