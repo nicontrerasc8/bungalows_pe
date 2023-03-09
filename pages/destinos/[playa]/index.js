@@ -11,7 +11,7 @@ import UseCartContext from '../../../lib/context'
 const Bungalow = ({data, For, idx, path}) => {
 
      const [ShowDireccion, setShowDireccion] = useState(false)
-
+     const {Language} = UseCartContext()
 
      return <article>
      
@@ -28,21 +28,9 @@ const Bungalow = ({data, For, idx, path}) => {
      <section>
      <h3>{data.Title}</h3>
      <h6>{For} {data.for}</h6>
-     {
-          data.precios && <>
-          <h5>Precios por noche:</h5>
-          <ul>
-          {
-                data.precios.map((info, idx) => {
-                    return <li key={idx}>{info}</li>
-               })
-          }
-          </ul>
-          </>
-     }
      <Link href={"/destinos/"+path+"/"+idx}>
           <button className='btn-primary'>
-             <FaInfoCircle/>  Más información
+             <FaInfoCircle/>  {Language.moreInfo}
           </button>
      </Link>
      

@@ -11,6 +11,7 @@ import { useRouter } from 'next/router';
 import * as ga from "../lib/analytics"
 import Script from 'next/script';
 import { ContextProvider } from '../lib/context';
+import EmailBanner from '../Components/EmailBanner';
 
 function MyApp({ Component, pageProps }) {
 
@@ -42,6 +43,7 @@ function MyApp({ Component, pageProps }) {
       <ContextProvider>
       {Loading && <LoadingContainer/>}
       <NavBar/>
+      <EmailBanner/>
       <Component {...pageProps} />
       <Toaster
         toastOptions={{

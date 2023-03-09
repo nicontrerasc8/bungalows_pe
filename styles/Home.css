@@ -254,7 +254,7 @@
 .bungalows article section h6{
      text-align: center;
      color: #222222;
-     margin: 5px 0 calc(1vh + 10px) 0;
+     margin: 5px 0 0 0;
      font-size: clamp(20px, calc(1vmax + 5px), calc(2vmax + 10px));
 }
 .bungalows article img{
@@ -263,6 +263,7 @@
      border-radius: 10px;
 }
 .bungalows button{
+     margin-top: calc(1vh + 10px);
      display: flex;
      flex-direction: row;
      align-items: center;

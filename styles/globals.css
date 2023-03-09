@@ -574,3 +574,30 @@ display: none;
 .oxahaus-btn button{
   font-size: clamp(20px, calc(1vmax + 10px), calc(1vmax + 10px));
 }
+.email-banner{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: calc(1vh + 10px);
+  padding: calc(2vh + 10px) 2%;
+  background-color: var(--white);
+  border-radius: 20px;
+  width: clamp(300px, 30vw, 30vw);
+  text-align: center;
+  box-shadow: 0 0 10px var(--red);
+}
+.email-banner p{
+  font-size: clamp(23px, calc(1vmax + 10px), calc(1vmax + 10px));
+}
+.email-banner input{
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  border: 3px solid #555555;
+  text-align: center;
+  font-size: clamp(17px, calc(1vmin + 10px), calc(1vmin + 10px));
+}
+.email-banner button{
+  font-size: clamp(17px, calc(1vmin + 10px), calc(1vmin + 10px));
+}
