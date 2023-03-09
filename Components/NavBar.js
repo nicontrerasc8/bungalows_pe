@@ -7,7 +7,7 @@ import React, { useEffect, useState } from 'react';
 import { DropInFromLeft } from '../lib/animations';
 import BackDrop from './BackDrop';
 import { useRouter } from 'next/router';
-import { FaBlog, FaBook, FaHome, FaPlane, FaPlaneDeparture, FaUmbrellaBeach, FaWarehouse } from 'react-icons/fa';
+import { FaBlog, FaBook, FaHome, FaPlane, FaPlaneDeparture, FaShoppingBag, FaUmbrellaBeach, FaWarehouse } from 'react-icons/fa';
 import UseCartContext from '../lib/context';
 
 const NavBar = () => {
@@ -64,6 +64,11 @@ const NavBar = () => {
                <FaPlaneDeparture/> {Language.navBtn2}
           </button>
           </Link>
+          {/* <Link href={"/productos"}>
+               <button className='btn-secondary'>
+                    <FaShoppingBag/> {Language.navBtn3}
+               </button>
+          </Link> */}
           <button className='btn-tertiary' onClick={() => ChangeLanguage(1)}>
                🇪🇸
           </button>
@@ -109,7 +114,10 @@ const NavBar = () => {
                     <button className='btn-secondary' onClick={() => ChangeRoute("/blog")}>
                     {Language.navBtn2}
                     </button>
-               <a target={"_blank"} rel='noreferrer' href={'https://www.instagram.com/bungalows_pe/'}>
+                    {/* <button className='btn-secondary' onClick={() => ChangeRoute("/productos")}>
+                    {Language.navBtn3}
+                    </button> */}
+               <a target={"_blank"} rel='noreferrer' href={'https://www.instagram.com/bungalows_peru/'}>
                     <button className='btn-instagram'>
                          <FontAwesomeIcon icon={faCamera}/> Instagram
                     </button>

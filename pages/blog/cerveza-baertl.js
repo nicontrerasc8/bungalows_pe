@@ -56,7 +56,7 @@ const OxaHaus = () => {
               <h5>{info.title}</h5>
               <Link href={`/blog/${info.link}`}>
                 <button className='btn-primary'>
-                {Language.readArticle}
+                Leer artículo
                 </button>
               </Link>
             </div>
