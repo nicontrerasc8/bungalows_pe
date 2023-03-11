@@ -7,14 +7,14 @@ import React, { useEffect, useState } from 'react';
 import { DropInFromLeft } from '../lib/animations';
 import BackDrop from './BackDrop';
 import { useRouter } from 'next/router';
-import { FaBlog, FaBook, FaHome, FaPlane, FaPlaneDeparture, FaShoppingBag, FaUmbrellaBeach, FaWarehouse } from 'react-icons/fa';
+import { FaBlog, FaBook, FaHome, FaPlane, FaPlaneDeparture, FaShoppingBag, FaShoppingCart, FaUmbrellaBeach, FaWarehouse } from 'react-icons/fa';
 import UseCartContext from '../lib/context';
 
 const NavBar = () => {
      
      const [navSolidColor, setNavSolidColor] = useState(false)
      const [OpenNav, setOpenNav] = useState(false);
-     const {ChangeLanguage, Language} = UseCartContext()
+     const {ChangeLanguage, Language, ProductsCount} = UseCartContext()
 
      const ChangeNavigationValue = () => setOpenNav(!OpenNav)
 
@@ -64,11 +64,19 @@ const NavBar = () => {
                <FaPlaneDeparture/> {Language.navBtn2}
           </button>
           </Link>
-          {/* <Link href={"/productos"}>
+        {/*   <Link href={"/productos"}>
                <button className='btn-secondary'>
                     <FaShoppingBag/> {Language.navBtn3}
                </button>
-          </Link> */}
+          </Link> 
+          {
+               ProductsCount() ?
+               <Link href={"/productos"}>
+               <button className='btn-tertiary cart-btn'>
+                    <FaShoppingCart/>  &#40;{ProductsCount()}&#41;
+               </button>
+          </Link> : ""
+          } */}
           <button className='btn-tertiary' onClick={() => ChangeLanguage(1)}>
                🇪🇸
           </button>
@@ -114,9 +122,15 @@ const NavBar = () => {
                     <button className='btn-secondary' onClick={() => ChangeRoute("/blog")}>
                     {Language.navBtn2}
                     </button>
-                    {/* <button className='btn-secondary' onClick={() => ChangeRoute("/productos")}>
+                  {/*   <button className='btn-secondary' onClick={() => ChangeRoute("/productos")}>
                     {Language.navBtn3}
-                    </button> */}
+                    </button> 
+                    {
+               ProductsCount() ?
+               <button className='btn-tertiary cart-btn' onClick={() => ChangeRoute("/carrito")}>
+                    <FaShoppingCart/> &#40;{ProductsCount()}&#41;
+               </button>: ""
+          } */}
                <a target={"_blank"} rel='noreferrer' href={'https://www.instagram.com/bungalows_peru/'}>
                     <button className='btn-instagram'>
                          <FontAwesomeIcon icon={faCamera}/> Instagram

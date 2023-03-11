@@ -24,8 +24,8 @@ const EmailBanner = () => {
                 },
                 body: JSON.stringify(data)
               }).then((res) => {
-                  console.log('Response received')
-                  if (res.status === 200) console.log('Response succeeded!')
+                  
+
                   
               })
               toast.success("Te has suscrito con éxito a nuestro Newsletter")

@@ -12,7 +12,7 @@ const Carrusel = ({Arr}) => {
   }
 
   useEffect(() => {
-    console.log(SlidesLength)
+
     if(SlidesLength > 1){
         timeout.current = setTimeout(NextSlide, 9000);
 

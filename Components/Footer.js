@@ -5,16 +5,25 @@ import IG from "../public/instagram.svg"
 import FB from "../public/fb.svg"
 import YT from "../public/youtube.svg"
 import LI from "../public/linkedin.svg"
-import { FaFacebook, FaInstagram } from 'react-icons/fa'
+import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from 'react-icons/fa'
+import UseCartContext from '../lib/context'
 
 const Footer = () => {
+   const {Language} = UseCartContext()
+
   return <footer>
-       <h3>Síguenos en: </h3>
+       <h3>{Language.follow} </h3>
        <a href='https://www.instagram.com/bungalows_peru/' target='_blank' rel='noreferrer'>
           <FaInstagram/>
        </a>
        <a href='https://www.facebook.com/bungalowsPE' target='_blank' rel='noreferrer'>
           <FaFacebook/>
+       </a>
+       <a href='https://www.youtube.com/channel/UCyORLTkS5hJmMQleHhW4xug' target='_blank' rel='noreferrer'>
+          <FaYoutube/>
+       </a>
+       <a href='https://www.linkedin.com/company/bungalows-peru/' target='_blank' rel='noreferrer'>
+          <FaLinkedin/>
        </a>
        {/* <a href='https://www.youtube.com/channel/UCyORLTkS5hJmMQleHhW4xug' target='_blank' rel='noreferrer'>
           <Image src={YT} height={70} width={70}/>

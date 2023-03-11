@@ -26,6 +26,14 @@ nav{
 nav button{
      font-size: clamp(calc(10px + 1vmax), 1vmax,1vmax);
 }
+.cart-btn{
+     box-shadow: 0 0 5px var(--red);
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     justify-content: center;
+     gap: 10px;
+}
 .hamburger-menu{
      font-size: 3rem;
 }
