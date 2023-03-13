@@ -8,23 +8,148 @@ import Link from 'next/link'
 const P = [
   {
     id: 0,
-    n: "Café Villarica",
+    n: "Black Angus Bisteck Bola de Lomo",
     options: [
       {
-        n: "100 gr",
-        p: 20
+        n: "",
+        p: 66
+      }
+    ],
+    img: "/oxa-p-1.png"
+  },
+  {
+    id: 1,
+    n: "Black angus T-bone",
+    options: [
+      {
+        n: "",
+        p: 66
+      }
+    ],
+    img: "/oxa-p-2.png"
+  },
+  {
+    id: 2,
+    n: "Black angus asado de tira",
+    options: [
+      {
+        n: "",
+        p: 66
+      }
+    ],
+    img: "/oxa-p-3.png"
+  },
+  {
+    id: 10,
+    n: "J. Straub Cecina Ahumada ",
+    options: [
+      {
+        n: "250 grs",
+        p: 23.1
       },
       {
-        n: "200 gr",
-        p: 30
-      },
-      {
-        n: "400 gr",
-        p: 50
+        n: "500 grs",
+        p: 38.5
       },
     ],
-    img: "https://firebasestorage.googleapis.com/v0/b/racing-online-store.appspot.com/o/uploads%2F1643038318481.4fdb0b6-e13d-f855-0aa-ba74aee4ac41?alt=media&token=14dda3dc-b251-4ff1-ac3f-c68348b0ade4"
-  }
+    img: "/oxa-p-11.jpg"
+  },
+  {
+    id: 3,
+    n: "Queso Oxandino Finas Hierbas Floralp 500 grs",
+    options: [
+      {
+        n: "",
+        p: 28
+      }
+    ],
+    img: "/oxa-p-4.jpg"
+  },
+  {
+    id: 4,
+    n: "Queso Oxandino Florap 450 grs",
+    options: [
+      {
+        n: "",
+        p: 27
+      }
+    ],
+    img: "/oxa-p-5.jpg"
+  },
+  {
+    id: 5,
+    n: "Queso fresco floralp 500 grs",
+    options: [
+      {
+        n: "",
+        p: 19
+      }
+    ],
+    img: "/oxa-p-6.jpg"
+  },
+  {
+    id: 10,
+    n: "D’Calucho Yogurt de Lúcuma 1kg",
+    options: [
+      {
+        n: "",
+        p: 9.9
+      },
+    ],
+    img: "/oxa-p-12.jpg"
+  },
+  {
+    id: 7,
+    n: "Mantequilla D'Calucho",
+    options: [
+      {
+        n: "240 grs",
+        p: 26.5
+      },
+      {
+        n: "450 grs",
+        p: 16
+      }
+    ],
+    img: "/oxa-p-8.jpg"
+  },
+  {
+    id: 8,
+    n: "El Colono Café molido tradicional premium 500 gr",
+    options: [
+      {
+        n: "",
+        p: 48
+      },
+    ],
+    img: "/oxa-p-9.jpg"
+  },
+  {
+    id: 9,
+    n: "El Colono Café Expreso 250 gr",
+    options: [
+      {
+        n: "",
+        p: 26.5
+      },
+    ],
+    img: "/oxa-p-10.jpg"
+  },
+  {
+    id: 6,
+    n: "Miel pura",
+    options: [
+      {
+        n: "500 grs",
+        p: 27
+      },
+      {
+        n: "1 kg",
+        p: 49
+      }
+    ],
+    img: "/oxa-p-7.jpg"
+  },
 ]
 
 const Product = ({info}) => {
@@ -56,26 +181,34 @@ const Product = ({info}) => {
       })
     }
 
+    useEffect(() => {
+      if(info.options.length === 1) setSelected(info.options[0])
+    }, [info.options, ])
+    
+
   return <article>
   <img src={info.img}/>
   <h3>
   {info.n}
   </h3>
-  <div className='select'>
-  <button className='btn-primary' onClick={() => setShow(!Show)}>
-       {Selected.n ? `${Selected.n} - s/.${Selected.p}` : Selected}
-       {
-          Show ? <FaChevronUp/> : <FaChevronDown/>
+  {
+    info.options.length > 1 ? <div className='select'>
+    <button className='btn-primary' onClick={() => setShow(!Show)}>
+         {Selected.n ? `${Selected.n} - s/.${Selected.p}` : Selected}
+         {
+            Show ? <FaChevronUp/> : <FaChevronDown/>
+          }
+        </button>
+        {
+          Show && info.options.length && info.options.map((data, idx) => {
+           if(Selected != info) return <button key={idx} className='btn-primary' onClick={() => ChangeFN(data)}>
+              {data.n} - s/.{data.p}
+            </button>
+          })
         }
-      </button>
-      {
-        Show && info.options.length && info.options.map((data, idx) => {
-         if(Selected != info) return <button key={idx} className='btn-primary' onClick={() => ChangeFN(data)}>
-            {data.n} - s/.{data.p}
-          </button>
-        })
-      }
-</div>
+  </div>
+  : <p>Precio: s/. {Selected.p}</p>
+  }
 <Counter Count={CountI} AddToCounter={Add} SubstractCounter={Substract}/>
 <button className='btn-primary' onClick={Confirm}>
   Comprar

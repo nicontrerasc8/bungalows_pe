@@ -64,7 +64,7 @@ const NavBar = () => {
                <FaPlaneDeparture/> {Language.navBtn2}
           </button>
           </Link>
-        {/*   <Link href={"/productos"}>
+          <Link href={"/productos"}>
                <button className='btn-secondary'>
                     <FaShoppingBag/> {Language.navBtn3}
                </button>
@@ -76,7 +76,7 @@ const NavBar = () => {
                     <FaShoppingCart/>  &#40;{ProductsCount()}&#41;
                </button>
           </Link> : ""
-          } */}
+          } 
           <button className='btn-tertiary' onClick={() => ChangeLanguage(1)}>
                🇪🇸
           </button>
@@ -122,7 +122,7 @@ const NavBar = () => {
                     <button className='btn-secondary' onClick={() => ChangeRoute("/blog")}>
                     {Language.navBtn2}
                     </button>
-                  {/*   <button className='btn-secondary' onClick={() => ChangeRoute("/productos")}>
+                    <button className='btn-secondary' onClick={() => ChangeRoute("/productos")}>
                     {Language.navBtn3}
                     </button> 
                     {
@@ -130,7 +130,7 @@ const NavBar = () => {
                <button className='btn-tertiary cart-btn' onClick={() => ChangeRoute("/carrito")}>
                     <FaShoppingCart/> &#40;{ProductsCount()}&#41;
                </button>: ""
-          } */}
+          } *
                <a target={"_blank"} rel='noreferrer' href={'https://www.instagram.com/bungalows_peru/'}>
                     <button className='btn-instagram'>
                          <FontAwesomeIcon icon={faCamera}/> Instagram

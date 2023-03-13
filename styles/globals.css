@@ -613,7 +613,7 @@ display: none;
 }
 .page.cart section{
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -629,6 +629,10 @@ display: none;
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+.page.cart section article p{
+  font-size: clamp(20px, calc(1vmin + 10px), calc(1vmin + 10px));
+  margin-bottom: calc(1vh + 10px);
 }
 .page.cart section article img{
   width: 100%;
