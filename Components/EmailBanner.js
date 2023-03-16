@@ -14,7 +14,7 @@ const EmailBanner = () => {
     const Send = () => {
         if(ValidateEmail(EmailVal)){
             let data = {
-                email: EmailBanner
+                email: EmailVal
             }
             fetch('/api/newsletter', {
                 method: 'POST',
