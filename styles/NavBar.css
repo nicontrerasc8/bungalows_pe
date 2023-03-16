@@ -99,6 +99,11 @@ nav.active .hamburger span{
      transform: rotate(-45deg);
      bottom: 16px;
 }
+nav .btn-tertiary{
+     background-color: var(--platinum);
+     display: flex;
+     align-items: center;
+}
 .btn-toggle-nav{
      display: flex;
      flex-direction: column;

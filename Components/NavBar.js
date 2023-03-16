@@ -78,10 +78,10 @@ const NavBar = () => {
           </Link> : ""
           } 
           <button className='btn-tertiary' onClick={() => ChangeLanguage(1)}>
-               🇪🇸
+               <Image src={"/spain.png"} height={50} width={50}/>
           </button>
           <button className='btn-tertiary' onClick={() => ChangeLanguage(2)}>
-               🇬🇧
+          <Image src={"/uk.png"} height={50} width={50}/>
           </button>
        </div>
      {/* <div className='buttons'>
@@ -130,7 +130,7 @@ const NavBar = () => {
                <button className='btn-tertiary cart-btn' onClick={() => ChangeRoute("/carrito")}>
                     <FaShoppingCart/> &#40;{ProductsCount()}&#41;
                </button>: ""
-          } *
+          } 
                <a target={"_blank"} rel='noreferrer' href={'https://www.instagram.com/bungalows_peru/'}>
                     <button className='btn-instagram'>
                          <FontAwesomeIcon icon={faCamera}/> Instagram
@@ -138,10 +138,10 @@ const NavBar = () => {
                </a>
                <div>
                     <button className='btn-tertiary' onClick={() => ChangeLang(1)}>
-                         🇪🇸
+                    <Image src={"/spain.png"} height={50} width={50}/>
                     </button>
                     <button className='btn-tertiary' onClick={() => ChangeLang(2)}>
-                         🇬🇧
+                    <Image src={"/uk.png"} height={50} width={50}/>
                     </button>
                     </div>
           </motion.div>
