@@ -19,7 +19,7 @@ const Index = ({Array, data, playa}) => {
             Arr.cats && Arr.cats.length > 0 && Arr.cats.map((data,idx) => {
                 return <Link href={"/destinos/"+playa+"/"+data.id}>
                     <article key={idx}>
-                    <img alt='' src={data.img}/>
+                    <img alt={data.img} src={data.img}/>
                     <h2>
                         {
                             data.i
