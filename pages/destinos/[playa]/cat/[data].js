@@ -17,8 +17,8 @@ const Index = ({Array, data, playa}) => {
     <section className='bungalows'>
         {
             Arr.cats && Arr.cats.length > 0 && Arr.cats.map((data,idx) => {
-                return <Link href={"/destinos/"+playa+"/"+data.id}>
-                    <article key={idx}>
+                return <Link href={"/destinos/"+playa+"/"+data.id} key={idx}>
+                    <article>
                     <img alt={data.img} src={data.img}/>
                     <h2>
                         {
