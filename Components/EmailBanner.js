@@ -3,6 +3,7 @@ import toast from 'react-hot-toast'
 import UseCartContext from '../lib/context'
 import { ValidateEmail } from '../lib/ValidateEmail'
 import BackDrop from './BackDrop'
+import {FaTimes} from "react-icons/fa"
 
 const EmailBanner = () => {
     const [BannerOn, setBannerOn] = useState(false)
@@ -42,6 +43,11 @@ const EmailBanner = () => {
 
   return <BackDrop isOn={BannerOn} onClick={ChangeBannerVal}>
     <div className='email-banner' onClick={(e) => e.stopPropagation()}>
+      <div className='close'>
+          <span onClick={ChangeBannerVal}>
+            <FaTimes/>
+          </span>
+      </div>
         <p>{Language.newsLetter}</p>
         <input placeholder={Language.email} value={EmailVal} onChange={(e) => setEmailVal(e.target.value)}/>
         <button className='btn-primary' onClick={Send}>

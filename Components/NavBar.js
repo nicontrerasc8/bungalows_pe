@@ -78,10 +78,10 @@ const NavBar = () => {
           </Link> : ""
           } 
           <button className='btn-tertiary' onClick={() => ChangeLanguage(1)}>
-               <Image src={"/spain.png"} height={50} width={50}/>
+               <Image src={"/spain.png"} height={45} width={45}/>
           </button>
           <button className='btn-tertiary' onClick={() => ChangeLanguage(2)}>
-          <Image src={"/uk.png"} height={50} width={50}/>
+          <Image src={"/uk.png"} height={45} width={45}/>
           </button>
        </div>
      {/* <div className='buttons'>
@@ -138,10 +138,10 @@ const NavBar = () => {
                </a>
                <div>
                     <button className='btn-tertiary' onClick={() => ChangeLang(1)}>
-                    <Image src={"/spain.png"} height={50} width={50}/>
+                    <Image src={"/spain.png"} height={45} width={45}/>
                     </button>
                     <button className='btn-tertiary' onClick={() => ChangeLang(2)}>
-                    <Image src={"/uk.png"} height={50} width={50}/>
+                    <Image src={"/uk.png"} height={45} width={45}/>
                     </button>
                     </div>
           </motion.div>

@@ -142,13 +142,12 @@
 }
 .bungalow{
      margin-top: 2rem;
-     width: clamp(300px, 90vw, 90vw);
-     box-shadow: 0 0 20px;
-     background-color: var(--white);
-     display: grid;
-     grid-template-columns: calc(10vh + 35vw + 20px) 1fr;
+     width: clamp(300px, 80vw, 80vw);
+    display: flex;
+    flex-direction: column;
      justify-content: center;
      align-items: center;
+     text-align: center;
      border-radius: 10px;
      padding: 0;
 }
@@ -175,9 +174,22 @@
      height: calc(10vh + 30vw + 20px);
      width: calc(10vh + 35vw + 20px);
 }
+.bungalow ul{
+     display: flex;
+     flex-wrap: wrap;
+     margin: 0 auto;
+     justify-content: center;
+     gap: 0 1rem;
+     width: clamp(300px, 50%, 50%);
+     text-align: left;
+}
 @media screen and (max-width: 1000px){
      .bungalow iframe{
           width: 100%;
+     }
+     .bungalow ul{
+          flex-direction: column;
+          flex-wrap: unset;
      }
      .bungalow img{
           width: 100%;
@@ -238,7 +250,14 @@
      background-color: var(--white);
      border-radius: 10px;
      box-shadow: 0 0 10px var(--red);
+     transition: 1s;
      width: clamp(300px, 27vw, 30vw);
+}
+.bungalows article:hover{
+     background: var(--red);
+     color: var(--white);
+     transform: translateY(-10px);
+     cursor: pointer;
 }
 .bungalows article section{
      display: flex;
@@ -253,7 +272,6 @@
 }
 .bungalows article section h6{
      text-align: center;
-     color: #222222;
      margin: 5px 0 0 0;
      font-size: clamp(20px, calc(1vmax + 5px), calc(2vmax + 10px));
 }

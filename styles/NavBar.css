@@ -124,3 +124,19 @@ nav .btn-tertiary{
      nav .hamburger{display: flex;}
      footer h3{display: none;}
 }
+.close{
+     display: flex;
+     flex-direction: row;
+     align-items: flex-end;
+     justify-content: flex-end;
+     width: 100%;
+}
+.close span{
+     border-radius: 50%;
+     background-color: var(--platinum);
+     display: flex;
+     align-items: center;
+     cursor: pointer;
+     padding: 10px;
+     font-size: clamp(15px, calc(1vmax + 5px), calc(1vmax + 5px));
+}

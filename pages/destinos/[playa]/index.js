@@ -13,7 +13,8 @@ const Bungalow = ({data, For, idx, path}) => {
      const [ShowDireccion, setShowDireccion] = useState(false)
      const {Language} = UseCartContext()
 
-     return <article>
+     return  <Link href={data.cats ? "/destinos/"+path+"/cat/"+idx : "/destinos/"+path+"/"+data.id}>
+     <article>
      
      {
           ShowDireccion && <>
@@ -21,21 +22,16 @@ const Bungalow = ({data, For, idx, path}) => {
           {data.maps &&  <iframe src={data.maps} loading="lazy"/>}
           </>
      }
-     {data.img && data.img.map((i, idx) => {
-          return <img alt={data.Title} src={i} key={idx}/>
-     })}
+  
+          <img src={data.img} key={idx}/>
+
      {data.src && <iframe className='place-main-video' src={data.src} allowFullScreen={true}/> }
-     <section>
-     <h3>{data.Title}</h3>
-     <h6>{For} {data.for}</h6>
-     <Link href={"/destinos/"+path+"/"+idx}>
-          <button className='btn-primary'>
-             <FaInfoCircle/>  {Language.moreInfo}
-          </button>
-     </Link>
-     
-     </section>
-</article>
+          <section>
+               <h3>{data.Title}</h3>
+               <h6>{For} {data.for}</h6>
+          </section>
+     </article>
+</Link>
 }
 
 const Playa = ({Array}) => {
@@ -72,7 +68,7 @@ const Playa = ({Array}) => {
           
           <section className='bungalows'>
           {
-               Arr.bungalows && Arr.bungalows.length > 0 && Arr.bungalows.map((data,idx) => {
+               Arr.bung && Arr.bung.length > 0 && Arr.bung.map((data,idx) => {
                     return <Bungalow data={data} For={Language.destinationsFor} idx={idx} key={idx} path={Arr.link}/>
                }) 
           }

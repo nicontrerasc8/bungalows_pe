@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { FaHome, FaMousePointer } from "react-icons/fa"
+import MetaTags from "../../../Components/MetaTags"
 import UseCartContext from "../../../lib/context"
 
 const Bungalow = ({N, bungalow}) => {
@@ -14,9 +15,12 @@ const Bungalow = ({N, bungalow}) => {
       }, [Data, Language, ])
 
 
-   if(Data) return <div className="page main-div">
+   if(Data) return <>
+   <MetaTags title={Data.Title + " | Bungalows Perú"}/>
+   <div className="page main-div">
     <article className="bungalow">
-    
+    <h3>{Data.Title}</h3>
+    <h6>{Language.destinationsFor} {Data.for}</h6>
     {
          ShowDireccion && <>
          <p>Dirección: {Data.direccion}</p>
@@ -28,8 +32,6 @@ const Bungalow = ({N, bungalow}) => {
     })}
     {Data.src && <iframe className='place-main-video' src={Data.src} allowFullScreen={true}/> }
     <section>
-    <h3>{Data.Title}</h3>
-    <h6>{Language.destinationsFor} {Data.for}</h6>
     {
         Data.precios && <>
          <h5>Precios por noche:</h5>
@@ -63,6 +65,7 @@ const Bungalow = ({N, bungalow}) => {
     </section>
 </article>
    </div>
+   </>
     else return ""
 }
 
