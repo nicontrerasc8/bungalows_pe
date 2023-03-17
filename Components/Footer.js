@@ -39,13 +39,7 @@ const Footer = () => {
        <a href='https://www.linkedin.com/company/bungalows-peru/' target='_blank' rel='noreferrer'>
           <Image src={LI} height={60} width={60}/>
        </a> */}
-       <ins class="adsbygoogle"
-     style={{display: "block"}}
-     data-ad-client="ca-pub-5695121510671116"
-     data-ad-slot="xxxxxxxx"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-     (adsbygoogle = window.adsbygoogle || []).push({});
+
   </footer>
 }
 
