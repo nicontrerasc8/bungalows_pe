@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import UseCartContext from '../../../../lib/context'
+import MetaTags from "../../../../Components/MetaTags"
 
 const Index = ({Array, data, playa}) => {
 
@@ -12,8 +13,9 @@ const Index = ({Array, data, playa}) => {
        console.log(Language.ImageData[Array].bung[data], Array)
      }, [Array, Language, ])
 
-  return <div className='page main-div'>
-    <h2></h2>
+  return <>
+    <MetaTags title='Bungalows Perú'/>
+    <div className='page main-div'>
     <section className='bungalows'>
         {
             Arr.cats && Arr.cats.length > 0 && Arr.cats.map((data,idx) => {
@@ -31,6 +33,7 @@ const Index = ({Array, data, playa}) => {
         }
     </section>
   </div>
+  </>
 }
 
 export default Index

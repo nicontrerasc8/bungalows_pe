@@ -39,8 +39,15 @@ function MyApp({ Component, pageProps }) {
   
 
 
-  return (
-      <ContextProvider>
+  return <>
+  <Script 
+          id="Adsense-id"
+          data-ad-client="ca-pub-5695121510671116"
+          async="true"
+          strategy="beforeInteractive"
+          src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle'
+        />
+   <ContextProvider>
       {Loading && <LoadingContainer/>}
       <NavBar/>
       <EmailBanner/>
@@ -79,7 +86,8 @@ function MyApp({ Component, pageProps }) {
       <WhatsAppButton/>
       <Footer/>
     </ContextProvider>
-  )
+  </>
+     
 }
 
 export default MyApp
