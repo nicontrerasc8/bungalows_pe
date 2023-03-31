@@ -769,3 +769,20 @@ display: none;
   font-size: clamp(20px, calc(2vmin + 1rem), calc(1vmin + 1rem));
   margin-bottom: calc(1vh + 10px);
 }
+.links{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0 1rem;
+}
+.links h2{
+  width: 90vw;
+  text-align: center;
+  margin-top: calc(2vh + 10px);
+  margin-bottom: 0;
+  font-size: clamp(25px, calc(2vmax + 10px), calc(2vmax + 10px));
+}
+.links img{
+  width: clamp(300px, calc(5vw + 20vh), calc(5vw + 20vh));
+}

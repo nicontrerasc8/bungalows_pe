@@ -74,12 +74,13 @@ export default Bungalow
 export async function getServerSideProps({query}){
     var {playa, bungalow} = query
     var N
-    if(playa == "punta-hermosa") N = 0
+    if(playa == "punta-hermosa") N = 1
     
-    else if(playa == "oxapampa") N = 1
+    else if(playa == "oxapampa") N = 2
     
-    else if (playa == "asia") N = 2
+    else if (playa == "asia") N = 3
 
+    else if (playa == "paracas") N = 0
 
     return {props: {N, bungalow}}
 }

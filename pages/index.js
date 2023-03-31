@@ -14,6 +14,7 @@ import GoToOxaCorredores from '../Components/Go-To-OxaCorredores'
 import UseCartContext from '../lib/context'
 import Head from 'next/head'
 import Capitalize from '../capitalize'
+import Links from '../Components/Links'
 
 
 
@@ -132,6 +133,7 @@ export default function Home() {
           </section>
           </motion.div>
     </div>
+    <Links/>
     <GoToOxaCorredores/>
   </>
 }
