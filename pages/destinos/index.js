@@ -5,11 +5,36 @@ import MetaTags from '../../Components/MetaTags'
 import { Destinations } from '../../lib/arrays'
 import LoadingContainer from "../../Components/LoadingContainer"
 import UseCartContext from '../../lib/context'
+import toast from 'react-hot-toast'
 
 const ChooseDestination = () => {
 
   const {Language} = UseCartContext()
   const [Loading, setLoading] = useState(true)
+  const [NewDest, setNewDest] = useState("")
+  const [Email, setEmail] = useState("")
+
+  const Submit = async () => {
+    let data = {
+      email: Email,
+      dest: NewDest
+    }
+
+             fetch('/api/sugerencias', {
+              method: 'POST',
+              headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(data)
+            }).then((res) => {
+                console.log('Response received')
+                if (res.status === 200) console.log('Response succeeded!')
+                
+            })
+            setEmail("")
+            setNewDest("")
+   }
 
   useEffect(() => {
     setTimeout(() => {
@@ -37,6 +62,12 @@ const ChooseDestination = () => {
           })
         }
       </section>
+      <div className='new-dest'>
+      <p>{Language.NewDest}</p>
+      <input value={NewDest} onChange={(e) => setNewDest(e.target.value)}/>
+      <input value={Email} onChange={(e) => setEmail(e.target.value)} placeholder={Language.email}/>
+      <button className='btn-primary' onClick={Submit}>Enviar</button>
+      </div>
       </div>
      </>
    }

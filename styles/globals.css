@@ -786,3 +786,48 @@ display: none;
 .links img{
   width: clamp(300px, calc(5vw + 20vh), calc(5vw + 20vh));
 }
+.section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: calc(2vh + 10px) 5vw;
+  text-align: center;
+  justify-content: center;
+}
+.section article{
+  font-weight: 600;
+  background-color: var(--platinum);
+  border-radius: 10px;
+  padding: 2rem calc(3% + 10px);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 0 10px var(--red);
+  max-width: clamp(300px, 50vw, 50vw);
+}
+.section article h3{
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(25px, calc(1vmax + 1vmin + 10px), calc(1vmax + 1vmin + 10px));
+}
+.section article span{
+  color: var(--red);
+  font-size: clamp(15px, calc(1vmax + 10px), calc(1vmax + 10px));
+}
+.new-dest{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.new-dest p, .new-dest input{
+  font-size: clamp(18px, calc(1vmin + 10px), calc(1vmin + 10px));
+}
+.new-dest input{
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid var(--red);
+  width: clamp(300px, 25vw, 25vw);
+  text-align: center;
+}
