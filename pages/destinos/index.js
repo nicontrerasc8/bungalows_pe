@@ -17,7 +17,7 @@ const ChooseDestination = () => {
   const Submit = async () => {
     let data = {
       email: Email,
-      dest: NewDest
+      sugerencia: NewDest
     }
 
              fetch('/api/sugerencias', {
