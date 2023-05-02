@@ -831,3 +831,31 @@ display: none;
   width: clamp(300px, 25vw, 25vw);
   text-align: center;
 }
+.m-y-v{
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: calc(2vh + 1rem) 3vw;
+  margin-top: 2rem;
+  padding: calc(3vh + 20px) 2vw;
+  justify-content: center;
+}
+.m-y-v h3{
+  font-size: calc(1vmax + 1vmin + 10px);
+  margin-bottom: 10px;
+  font-style: italic;
+}
+.m-y-v article{
+ position: relative;
+  width: clamp(300px, 45vw, 50vw);
+  box-shadow: 0 0 10px var(--red);
+  display: flex;
+  padding: 20px 4%;
+  border-radius: 20px;
+  background-color: var(--white);
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

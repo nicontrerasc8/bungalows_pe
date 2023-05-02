@@ -16,6 +16,7 @@ import Head from 'next/head'
 import Capitalize from '../capitalize'
 import Links from '../Components/Links'
 import Recomendations from '../Components/Recomendations'
+import MyV from '../Components/MyV'
 
 
 
@@ -136,6 +137,7 @@ export default function Home() {
     </div>
     <Recomendations/>
     <Links/>
+    <MyV/>
     <GoToOxaCorredores/>
   </>
 }
